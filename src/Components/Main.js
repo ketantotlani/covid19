@@ -5,15 +5,16 @@ import {country} from './StateList'
 import {GlobalState} from '../Context/Contextapi'
 
 
-
+//URL For Fetching
 const URL = 'https://data.covid19india.org/v4/min/data.min.json'
 
 
 export default function Users() {
+    // Usage Of Context
     const [userInfo, setuserInfo, states, setstates, database, setdatabase, newdata, setnewdata, date, setDate, newDate, setNewDate]  = useContext(GlobalState);
     
 
-    
+    // Fetching Initial Data From API Using Axios
     useEffect(() => {
         const fetchData = () => {
             var statenames = country.map(country => country.value)
@@ -49,6 +50,8 @@ export default function Users() {
     
     // render() {
         // this.state.userInfo.map(states => this.setState({confirmed: states}))
+
+        // Data for State List Visualization Chart
         const data1 = [ 
             ['State:','Tested', 'Confirmed','Recovered'],
             
@@ -90,7 +93,7 @@ export default function Users() {
             
             
         ]
-
+        // Data For Vaccination Chart
         const data2 = [
             ['State', 'Vaccine 1st Dose', 'Vaccine 2nd Dose'],
             [country[0].label, userInfo.map(state => (Object.entries(state.AN.delta7)) ? Object.entries(state.AN.delta7)[3][1] : 0 )[0],  userInfo.map(state => (Object.entries(state.AN.delta7)) ? Object.entries(state.AN.delta7)[4][1] : 0 )[0]],
@@ -146,7 +149,7 @@ export default function Users() {
         
         const data8 = data7.map(ele =>ele[`${date}`]);
         console.log(data8);
-    
+        // Data for Date Picker Triggered onDataChange 
         const data3 = [ 
             ['State:','Tested', 'Confirmed','Recovered'],
             
@@ -188,7 +191,7 @@ export default function Users() {
             
             
         ]
-
+            // JSX 
         return (
             <div className="text-center col-md-10 " id="maincon">
                 <div className=" d-flex pl-5 pr-5  justify-content-center justify-content-between inline-block mt-5 mb-5" >
@@ -214,6 +217,7 @@ export default function Users() {
                 </div>
              <h2 className="mb-5">Graphical Representation</h2>
                 <div className="row">
+                    {/* If Date picker has user input then display New Data According to Date Choosen */}
                     {(newDate) ?
                         <div  className="col-md-6">
                         <Chart

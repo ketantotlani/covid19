@@ -7,6 +7,7 @@ import Provider from './Context/Contextapi'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // Provider Context with App Component 
   <Provider>
     <App />
   </Provider>,

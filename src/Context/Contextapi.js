@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const URL = 'https://data.covid19india.org/v4/min/data.min.json'
 const URL1 = 'https://data.covid19india.org/v4/min/timeseries.min.json'
-//Create Context is uses to create create context provider
+//Create Context uses to create create context provider
 export const GlobalState = createContext();
 
 
@@ -21,6 +21,7 @@ export default function Provider(props) {
     const [states, setstates] = useState([])
     const [database, setdatabase] = useState([])
     const [newdata, setnewdata] = useState([])
+    // If New date is Not same as Today's Date then setNewDate(True)
     useEffect(() => {
        const newdatchange = () => {
         if( date !== result ) {
@@ -31,6 +32,8 @@ export default function Provider(props) {
        newdatchange();
     }, [date])
 
+
+   // Fetching Data after Date Change for Chart
     useEffect(() => {
         const getnewdata = () =>{
             
@@ -48,6 +51,7 @@ export default function Provider(props) {
         getnewdata();
     }, [])
 
+    //Context Provider having all components as children (index.js)
     return (
         <GlobalState.Provider  value={[userInfo, setuserInfo, states, setstates, database, setdatabase, newdata, setnewdata,date,setDate, newDate, setNewDate]}>
             {props.children}  
