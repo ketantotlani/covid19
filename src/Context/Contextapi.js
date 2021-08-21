@@ -9,9 +9,10 @@ export const GlobalState = createContext();
 
 export default function Provider(props) {
 
-    var today = new Date(Date());
-    var result = today.toISOString().split('T')[0];
+    var yesterday = new Date((new Date()).valueOf() - 1000*60*60*24);
+    var result = yesterday.toISOString().split('T')[0];
 
+   
     // state
     const [date, setDate] = useState(result);
   
