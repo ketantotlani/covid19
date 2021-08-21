@@ -40,9 +40,15 @@ export default function Users() {
         fetchData();
     }, [])
 
-   
+    // componentDidMount() {
+       
+    // }
     
     
+    
+    
+    // render() {
+        // this.state.userInfo.map(states => this.setState({confirmed: states}))
         const data1 = [ 
             ['State:','Tested', 'Confirmed','Recovered'],
             
@@ -131,7 +137,57 @@ export default function Users() {
             country.splice(index, 1)
             
         }
-       
+        const data5 = newdata.map(state => state.GJ.dates); 
+        // console.log(data5);
+        // console.log(date);
+        const data6 = data5.map(item=> item )
+
+        const data7 = Object.values(data6)
+        
+        const data8 = data7.map(ele =>ele[`${date}`]);
+        console.log(data8);
+    
+        const data3 = [ 
+            ['State:','Tested', 'Confirmed','Recovered'],
+            
+            [(country[0].label)? country[0].label: '', newdata.map(state => (state.AN.dates[`${date}`]) ? state.AN.dates[`${date}`].delta.tested : 0 ),  newdata.map(state => (state.AN.dates[`${date}`]) ? state.AN.dates[`${date}`].delta.confirmed : 0 ), newdata.map(state => (state.AN.dates[`${date}`]) ? state.AN.dates[`${date}`].delta.recovered : 0 )],
+            [(country[1].label)? country[1].label: '', newdata.map(state => (state.AP.dates[`${date}`]) ? state.AP.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.AP.dates[`${date}`]) ? state.AP.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.AP.dates[`${date}`]) ? state.AP.dates[`${date}`].delta.recovered : 0 )],
+            [(country[2].label)? country[2].label: '', newdata.map(state => (state.AR.dates[`${date}`]) ? state.AR.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.AR.dates[`${date}`]) ? state.AR.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.AR.dates[`${date}`]) ? state.AR.dates[`${date}`].delta.recovered : 0 )],
+            [(country[3].label)? country[3].label: '', newdata.map(state => (state.AS.dates[`${date}`]) ? state.AS.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.AS.dates[`${date}`]) ? state.AS.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.AS.dates[`${date}`]) ? state.AS.dates[`${date}`].delta.recovered : 0 )],
+            [(country[4].label)? country[4].label: '', newdata.map(state => (state.BR.dates[`${date}`]) ? state.BR.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.BR.dates[`${date}`]) ? state.BR.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.BR.dates[`${date}`]) ? state.BR.dates[`${date}`].delta.recovered : 0 )],
+            [(country[5].label)? country[5].label: '', newdata.map(state => (state.CH.dates[`${date}`]) ? state.CH.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.CH.dates[`${date}`]) ? state.CH.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.CH.dates[`${date}`]) ? state.CH.dates[`${date}`].delta.recovered : 0 )],
+            [(country[6].label)? country[6].label: '', newdata.map(state => (state.CT.dates[`${date}`]) ? state.CT.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.CT.dates[`${date}`]) ? state.CT.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.CT.dates[`${date}`]) ? state.CT.dates[`${date}`].delta.recovered : 0 )],
+            [(country[7].label)? country[7].label: '', newdata.map(state => (state.DL.dates[`${date}`]) ? state.DL.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.DL.dates[`${date}`]) ? state.DL.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.DL.dates[`${date}`]) ? state.DL.dates[`${date}`].delta.recovered : 0 )],
+            [(country[9].label)? country[9].label: '', newdata.map(state => (state.GA.dates[`${date}`]) ? state.GA.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.GA.dates[`${date}`]) ? state.GA.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.GA.dates[`${date}`]) ? state.GA.dates[`${date}`].delta.recovered : 0 )],
+            [(country[10].label)? country[10].label: '', newdata.map(state => (state.GJ.dates[`${date}`]) ? state.GJ.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.GJ.dates[`${date}`]) ? state.GJ.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.GJ.dates[`${date}`]) ? state.GJ.dates[`${date}`].delta.recovered : 0 )],
+            [(country[11].label)? country[11].label: '', newdata.map(state => (state.HP.dates[`${date}`]) ? state.HP.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.HP.dates[`${date}`]) ? state.HP.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.HP.dates[`${date}`]) ? state.HP.dates[`${date}`].delta.recovered : 0 )],
+            [(country[12].label)? country[12].label: '', newdata.map(state => (state.HR.dates[`${date}`]) ? state.HR.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.HR.dates[`${date}`]) ? state.HR.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.HR.dates[`${date}`]) ? state.HR.dates[`${date}`].delta.recovered : 0 )],
+            // [(country[13].label)? country[10].label: '', this.state.newdata.map(state => (state.JH.delta.tested) ? state.JH.delta.tested : 0 )[0], this.state.newdata.map(state => (state.JH.delta.confirmed) ? state.JH.delta.confirmed : 0)[0],this.state.newdata.map(state => (state.JH.delta.recovered) ? state.JH.delta.recovered : 0 )[0]],
+            [(country[14].label)? country[14].label: '', newdata.map(state => (state.JK.dates[`${date}`]) ? state.JK.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.JK.dates[`${date}`]) ? state.JK.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.JK.dates[`${date}`]) ? state.JK.dates[`${date}`].delta.recovered : 0 )],
+            [(country[15].label)? country[15].label: '', newdata.map(state => (state.KA.dates[`${date}`]) ? state.KA.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.KA.dates[`${date}`]) ? state.KA.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.KA.dates[`${date}`]) ? state.KA.dates[`${date}`].delta.recovered : 0 )],
+            [(country[16].label)? country[16].label: '', newdata.map(state => (state.KL.dates[`${date}`]) ? state.KL.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.KL.dates[`${date}`]) ? state.KL.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.KL.dates[`${date}`]) ? state.KL.dates[`${date}`].delta.recovered : 0 )],
+            [(country[17].label)? country[17].label: '', newdata.map(state => (state.LD.dates[`${date}`]) ? state.LD.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.LD.dates[`${date}`]) ? state.LD.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.LD.dates[`${date}`]) ? state.LD.dates[`${date}`].delta.recovered : 0 )],
+            [(country[18].label)? country[18].label: '', newdata.map(state => (state.MH.dates[`${date}`]) ? state.MH.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.MH.dates[`${date}`]) ? state.MH.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.MH.dates[`${date}`]) ? state.MH.dates[`${date}`].delta.recovered : 0 )],
+            [(country[19].label)? country[19].label: '', newdata.map(state => (state.ML.dates[`${date}`]) ? state.ML.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.ML.dates[`${date}`]) ? state.ML.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.ML.dates[`${date}`]) ? state.ML.dates[`${date}`].delta.recovered : 0 )],
+            [(country[20].label)? country[20].label: '', newdata.map(state => (state.MN.dates[`${date}`]) ? state.MN.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.MN.dates[`${date}`]) ? state.MN.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.MN.dates[`${date}`]) ? state.MN.dates[`${date}`].delta.recovered : 0 )],
+            [(country[21].label)? country[21].label: '', newdata.map(state => (state.MP.dates[`${date}`]) ? state.MP.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.MP.dates[`${date}`]) ? state.MP.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.MP.dates[`${date}`]) ? state.MP.dates[`${date}`].delta.recovered : 0 )],
+            [(country[22].label)? country[22].label: '', newdata.map(state => (state.MZ.dates[`${date}`]) ? state.MZ.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.MZ.dates[`${date}`]) ? state.MZ.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.MZ.dates[`${date}`]) ? state.MZ.dates[`${date}`].delta.recovered : 0 )],
+            [(country[23].label)? country[23].label: '', newdata.map(state => (state.NL.dates[`${date}`]) ? state.NL.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.NL.dates[`${date}`]) ? state.NL.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.NL.dates[`${date}`]) ? state.NL.dates[`${date}`].delta.recovered : 0 )],
+            [(country[24].label)? country[24].label: '', newdata.map(state => (state.OR.dates[`${date}`]) ? state.OR.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.OR.dates[`${date}`]) ? state.OR.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.OR.dates[`${date}`]) ? state.OR.dates[`${date}`].delta.recovered : 0 )],
+            [(country[25].label)? country[25].label: '', newdata.map(state => (state.PB.dates[`${date}`]) ? state.PB.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.PB.dates[`${date}`]) ? state.PB.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.PB.dates[`${date}`]) ? state.PB.dates[`${date}`].delta.recovered : 0 )],
+            [(country[26].label)? country[26].label: '', newdata.map(state => (state.PY.dates[`${date}`]) ? state.PY.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.PY.dates[`${date}`]) ? state.PY.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.PY.dates[`${date}`]) ? state.PY.dates[`${date}`].delta.recovered : 0 )],
+            [(country[27].label)? country[27].label: '', newdata.map(state => (state.RJ.dates[`${date}`]) ? state.RJ.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.RJ.dates[`${date}`]) ? state.RJ.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.RJ.dates[`${date}`]) ? state.RJ.dates[`${date}`].delta.recovered : 0 )],
+            [(country[28].label)? country[28].label: '', newdata.map(state => (state.SK.dates[`${date}`]) ? state.SK.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.SK.dates[`${date}`]) ? state.SK.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.SK.dates[`${date}`]) ? state.SK.dates[`${date}`].delta.recovered : 0 )],
+            [(country[29].label)? country[29].label: '', newdata.map(state => (state.TG.dates[`${date}`]) ? state.TG.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.TG.dates[`${date}`]) ? state.TG.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.TG.dates[`${date}`]) ? state.TG.dates[`${date}`].delta.recovered : 0 )],
+            [(country[30].label)? country[30].label: '', newdata.map(state => (state.TN.dates[`${date}`]) ? state.TN.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.TN.dates[`${date}`]) ? state.TN.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.TN.dates[`${date}`]) ? state.TN.dates[`${date}`].delta.recovered : 0 )],
+            [(country[31].label)? country[31].label: '', newdata.map(state => (state.TR.dates[`${date}`]) ? state.TR.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.TR.dates[`${date}`]) ? state.TR.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.TR.dates[`${date}`]) ? state.TR.dates[`${date}`].delta.recovered : 0 )],
+            // [country[32].label, this.state.newdata.map(state => (state.TT.delta7.tested) ? state.TT.delta7.tested : 0 )[0], this.state.newdata.map(state => (state.TT.delta7.confirmed) ? state.TT.delta7.confirmed : 0)[0],this.state.newdata.map(state => (state.TT.delta7.recovered) ? state.TT.delta7.recovered : 0 )[0]],
+            [(country[33].label)? country[33].label: '', newdata.map(state => (state.UP.dates[`${date}`]) ? state.UP.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.UP.dates[`${date}`]) ? state.UP.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.UP.dates[`${date}`]) ? state.UP.dates[`${date}`].delta.recovered : 0 )],
+            [(country[34].label)? country[34].label: '', newdata.map(state => (state.UT.dates[`${date}`]) ? state.UT.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.UT.dates[`${date}`]) ? state.UT.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.UT.dates[`${date}`]) ? state.UT.dates[`${date}`].delta.recovered : 0 )],
+            [(country[35].label)? country[35].label: '', newdata.map(state => (state.WB.dates[`${date}`]) ? state.WB.dates[`${date}`].delta.tested : 0 ), newdata.map(state => (state.WB.dates[`${date}`]) ? state.WB.dates[`${date}`].delta.confirmed : 0),newdata.map(state => (state.WB.dates[`${date}`]) ? state.WB.dates[`${date}`].delta.recovered : 0 )],
+            
+            
+        ]
 
         return (
             <div className="text-center col-md-10 " id="maincon">
@@ -158,7 +214,35 @@ export default function Users() {
                 </div>
              <h2 className="mb-5">Graphical Representation</h2>
                 <div className="row">
-                    
+                    {(newDate) ?
+                        <div  className="col-md-6">
+                        <Chart
+                             width={'500px'}
+                             height={'200vh'}
+                             chartType="BarChart"
+                             // style={{marginTop: "-80px"}}
+                             loader={<div>Loading Chart</div>}
+ 
+                             data  ={data3}
+                      
+                             options={{
+                                 title: 'Data of Covid Cases(State Wise)',
+                                 chartArea: { width: '50%' },
+                                 isStacked: true,
+                                 hAxis: {
+                                 title: 'COVID CASES',
+                                 minValue: 0,
+                                 },
+                                 vAxis: {
+                                 title: 'States',
+                                 },
+                             }}
+                             // For tests
+                             rootProps={{ 'data-testid': '3' }}
+                             />
+                    </div>
+                
+                :
                    <div  className="col-md-6">
                        <Chart
                             width={'500px'}
@@ -185,6 +269,7 @@ export default function Users() {
                             rootProps={{ 'data-testid': '3' }}
                             />
                    </div>
+}
                    
                    <div  className="col-md-4">
                    <Chart

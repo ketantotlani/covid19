@@ -16,7 +16,7 @@ export default function Provider(props) {
     const [date, setDate] = useState(result);
   
 
-    const [newDate, setNewDate] = useState(true);
+    const [newDate, setNewDate] = useState(false);
     const [userInfo, setuserInfo] = useState([])
     const [states, setstates] = useState([])
     const [database, setdatabase] = useState([])
