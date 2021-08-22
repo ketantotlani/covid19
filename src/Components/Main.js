@@ -47,7 +47,6 @@ export default function Users() {
     
     
     
-    
     // render() {
         // this.state.userInfo.map(states => this.setState({confirmed: states}))
 
@@ -93,7 +92,7 @@ export default function Users() {
             
             
         // ]
-        const data2 = [ 
+        const data2 = (date > "2021-03-31") ?  [ 
             ['State:','Dose 1', 'Dose 2'],
             
             [(country[0].label)? country[0].label: '', newdata.map(state => (state.AN.dates[`${date}`]) ? state.AN.dates[`${date}`].delta.vaccinated1 : 0 )[0],  newdata.map(state => (state.AN.dates[`${date}`]) ? state.AN.dates[`${date}`].delta.vaccinated2 : 0 )[0]],
@@ -133,7 +132,7 @@ export default function Users() {
             [(country[35].label)? country[35].label: '', newdata.map(state => (state.WB.dates[`${date}`]) ? state.WB.dates[`${date}`].delta.vaccinated1 : 0 )[0], newdata.map(state => (state.WB.dates[`${date}`]) ? state.WB.dates[`${date}`].delta.vaccinated2 : 0)[0]],
             
             
-        ]
+        ]: ["","",""] 
         // Data For Vaccination Chart
         // const data2 = [
         //     ['State', 'Vaccine 1st Dose', 'Vaccine 2nd Dose'],
@@ -317,6 +316,8 @@ export default function Users() {
 }
                     */}
                    <div  className="col-md-4">
+                       
+                       
                    <Chart
                     width={'500px'}
                     height={'200vh'}
