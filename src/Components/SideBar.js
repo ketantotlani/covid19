@@ -5,8 +5,8 @@ export default class SideBar extends Component {
     render() {
         return (
             // SideBar Using Bootstrap Grid 
-            <div  className=" d-flex flex-column text-center col-md-2 bg-light p-5 sidebar" id="sidebar" >
-                <h4 className="sidebar-sticky sideclass " >Select States</h4>
+            <div  className=" d-flex flex-column text-center col-md-2 bg-light p-5 " id="sidebar" >
+                <h4 className=" sideclass " >Select States</h4>
                 <div className="" >
             {
                 country.map(item => (
