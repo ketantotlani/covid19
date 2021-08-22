@@ -242,17 +242,17 @@ export default function Users() {
                         </form>
                         <form >
                         <h5> Tested</h5>
-                         <h2>{newdata.map(state =>(state.TT.dates[`${date}`].delta.tested)? state.TT.dates[`${date}`].delta.tested : "N/A") }</h2> 
+                         <h2>{newdata.map(state =>(state.TT.dates[`${date}`])? state.TT.dates[`${date}`].delta.tested : "N/A") }</h2> 
                         </form>
                         <form  >
                         <h5> Confirmed</h5>
-                        <h2>{newdata.map(state =>state.TT.dates[`${date}`].delta.confirmed)  }</h2>
+                        <h2>{newdata.map(state =>(state.TT.dates[`${date}`])? state.TT.dates[`${date}`].delta.confirmed : "N/A")  }</h2>
 
                         </form>
                         
                         <form >
                         <h5> Recovered</h5>
-                        <h2> {newdata.map(state =>state.TT.dates[`${date}`].delta.recovered) }</h2>
+                        <h2> {newdata.map(state =>(state.TT.dates[`${date}`])? state.TT.dates[`${date}`].delta.tested : "N/A")  }</h2>
                         
                         </form>
                 </div>
